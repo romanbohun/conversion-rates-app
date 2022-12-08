@@ -10,21 +10,25 @@ import Foundation
 enum ConversionError: Error {
     case invalidData
     case requestError
+    case badRequest
 }
 
 final class RemoteConversionRatesLoader: ConversionRatesLoader {
 
-    private let url: URL
     private let client: HTTPClient
 
     typealias Result = LoadConversionRatesResult
 
-    init (url: URL, client: HTTPClient) {
-        self.url = url
+    init (client: HTTPClient) {
         self.client = client
     }
 
     func load(completion: @escaping (Result) -> Void) {
+        guard let url = getUrl() else {
+            completion(.failure(ConversionError.badRequest))
+            return
+        }
+
         client.get(from: url) { [weak self] result in
             guard let self = self else { return }
 
@@ -35,6 +39,14 @@ final class RemoteConversionRatesLoader: ConversionRatesLoader {
                 completion(.failure(ConversionError.requestError))
             }
         }
+    }
+
+    private func getUrl() -> URL? {
+        var urlComponent = URLComponents()
+        urlComponent.scheme = "https"
+        urlComponent.host = "wm0.mobimate.com"
+        urlComponent.path = "/content/worldmate/currencies/currency2008.dat"
+        return urlComponent.url
     }
 
     private func map(_ data: Data) -> Result {

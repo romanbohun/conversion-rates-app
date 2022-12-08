@@ -20,8 +20,7 @@ class ConversionRatesViewModel: ObservableObject {
     @Published private(set) var state: ConversionState = .idle
     private(set) var conversionRates = [ConversionRateItemViewModelOutput]()
 
-    private let loader: ConversionRatesLoader = RemoteConversionRatesLoader(url: URL(string: "https://wm0.mobimate.com/content/worldmate/currencies/currency2008.dat")!, client: URLSessionHTTPClient())
-
+    private let loader: ConversionRatesLoader = RemoteConversionRatesLoader(client: URLSessionHTTPClient())
 
 }
 
