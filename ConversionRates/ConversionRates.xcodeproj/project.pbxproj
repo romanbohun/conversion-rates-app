@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30EB34BF29426DAE0021340B /* ConversionRatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34BE29426DAE0021340B /* ConversionRatesApp.swift */; };
-		30EB34C129426DAE0021340B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34C029426DAE0021340B /* ContentView.swift */; };
+		30EB34C129426DAE0021340B /* ConversationRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34C029426DAE0021340B /* ConversationRatesView.swift */; };
 		30EB34C329426DB00021340B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EB34C229426DB00021340B /* Assets.xcassets */; };
 		30EB34C629426DB00021340B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EB34C529426DB00021340B /* Preview Assets.xcassets */; };
 		30EB34D6294273730021340B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34D5294273730021340B /* HTTPClient.swift */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		30EB34BB29426DAE0021340B /* ConversionRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConversionRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EB34BE29426DAE0021340B /* ConversionRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesApp.swift; sourceTree = "<group>"; };
-		30EB34C029426DAE0021340B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		30EB34C029426DAE0021340B /* ConversationRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRatesView.swift; sourceTree = "<group>"; };
 		30EB34C229426DB00021340B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30EB34C529426DB00021340B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30EB34D5294273730021340B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		30EB34CF29426F110021340B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				30EB34C029426DAE0021340B /* ContentView.swift */,
+				30EB34C029426DAE0021340B /* ConversationRatesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30EB34E3294276690021340B /* ConversionRatesMapper.swift in Sources */,
-				30EB34C129426DAE0021340B /* ContentView.swift in Sources */,
+				30EB34C129426DAE0021340B /* ConversationRatesView.swift in Sources */,
 				30EB34E52942784C0021340B /* ConversionRatesLoader.swift in Sources */,
 				30EB34DB2942746C0021340B /* ConversionRateDTO.swift in Sources */,
 				30EB34BF29426DAE0021340B /* ConversionRatesApp.swift in Sources */,
