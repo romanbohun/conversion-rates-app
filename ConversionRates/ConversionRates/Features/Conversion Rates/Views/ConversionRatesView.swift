@@ -26,9 +26,13 @@ struct ConversionRatesView: View {
                 case .loading:
                     ProgressView()
                 case .loaded:
-                    List {
-                        ForEach(viewModel.conversionRates) { rate in
-                            Text(rate.name)
+                    if viewModel.conversionRates.isEmpty {
+                        Text(viewModel.noDataMessage)
+                    } else {
+                        List {
+                            ForEach(viewModel.conversionRates) { rate in
+                                Text(rate.name)
+                            }
                         }
                     }
                 case .error:
@@ -52,6 +56,9 @@ struct ConversionRatesView: View {
             viewModel.getRates()
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer)
+        .onChange(of: searchText, perform: { newValue in
+            viewModel.filter(for: newValue)
+        })
         .alert(viewModel.errorMessageAlert, isPresented: isAlertPresented) {
             Button("OK", role: .cancel) { }
         }

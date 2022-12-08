@@ -17,18 +17,33 @@ protocol ConversionRatesViewModelOutput {
     var errorMessageScreen: String { get }
     var errorMessageAlert: String { get }
     var actionButtonTitle: String { get }
+    var noDataMessage: String { get }
+    
+    func filter(for keyword: String)
 }
 
-class ConversionRatesViewModel: ObservableObject, ConversionRatesViewModelOutput {
+class ConversionRatesViewModel: ObservableObject {
     @Published private(set) var state: ConversionState = .idle
-    private(set) var conversionRates = [ConversionRateItemViewModel]()
+    var conversionRates: [ConversionRateItemViewModel] {
+        if filterKeyword.isEmpty {
+            return conversionRatesOriginal
+        } else {
+            return filter.filter(conversionRatesOriginal, for: filterKeyword)
+        }
+    }
+
+    private var conversionRatesOriginal = [ConversionRateItemViewModel]()
 
     private(set) var title = NSLocalizedString("Conversion Rates", comment: "")
     private(set) var errorMessageScreen = NSLocalizedString("Error occured. Please use retry button", comment: "")
     private(set) var errorMessageAlert = NSLocalizedString("Failed to download conversion", comment: "")
     private(set) var actionButtonTitle = NSLocalizedString("Reload", comment: "")
+    private(set) var noDataMessage = NSLocalizedString("There are no Conversion Rates", comment: "")
+
+    @Published private var filterKeyword: String = ""
 
     private let loader: ConversionRatesLoader = RemoteConversionRatesLoader(client: URLSessionHTTPClient())
+    private let filter = ConversionRateFilter()
 }
 
 extension ConversionRatesViewModel: ConversionRatesViewModelInput {
@@ -40,8 +55,8 @@ extension ConversionRatesViewModel: ConversionRatesViewModelInput {
 
             switch result {
             case .success(let rates):
-                self.conversionRates.removeAll()
-                self.conversionRates.append(contentsOf: rates.map { ConversionRateItemViewModel($0) })
+                self.conversionRatesOriginal.removeAll()
+                self.conversionRatesOriginal.append(contentsOf: rates.map { ConversionRateItemViewModel($0) })
                 Task { @MainActor in
                     self.state = .loaded
                 }
@@ -54,3 +69,10 @@ extension ConversionRatesViewModel: ConversionRatesViewModelInput {
         }
     }
 }
+
+extension ConversionRatesViewModel: ConversionRatesViewModelOutput {
+    func filter(for keyword: String) {
+        filterKeyword = keyword;
+    }
+}
+
