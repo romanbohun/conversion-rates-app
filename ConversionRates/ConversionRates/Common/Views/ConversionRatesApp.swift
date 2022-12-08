@@ -11,7 +11,7 @@ import SwiftUI
 struct ConversionRatesApp: App {
     var body: some Scene {
         WindowGroup {
-            ConversationRatesView()
+            ConversionRatesView()
         }
     }
 }
