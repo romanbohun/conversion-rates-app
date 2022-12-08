@@ -85,6 +85,8 @@
 		30EB34CD29426EDC0021340B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30EB34DD294274AE0021340B /* Assets */,
+				30EB34DC294274A10021340B /* Views */,
 				30EB34D029426F750021340B /* Api */,
 			);
 			path = Common;
@@ -100,6 +102,14 @@
 			path = "Conversion Rates";
 			sourceTree = "<group>";
 		};
+		30EB34CF29426F110021340B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30EB34C029426DAE0021340B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		30EB34D029426F750021340B /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,22 @@
 				30EB34D72942739E0021340B /* URLSessionHTTPClient.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		30EB34DC294274A10021340B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30EB34BE29426DAE0021340B /* ConversionRatesApp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30EB34DD294274AE0021340B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				30EB34C229426DB00021340B /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		30EB34DE294274DA0021340B /* Api */ = {
