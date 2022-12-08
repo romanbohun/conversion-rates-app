@@ -15,6 +15,9 @@
 		30EB34D82942739E0021340B /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34D72942739E0021340B /* URLSessionHTTPClient.swift */; };
 		30EB34DB2942746C0021340B /* ConversionRateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34DA2942746C0021340B /* ConversionRateDTO.swift */; };
 		30EB34E12942755D0021340B /* ConversionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E02942755D0021340B /* ConversionRate.swift */; };
+		30EB34E3294276690021340B /* ConversionRatesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E2294276690021340B /* ConversionRatesMapper.swift */; };
+		30EB34E52942784C0021340B /* ConversionRatesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E42942784C0021340B /* ConversionRatesLoader.swift */; };
+		30EB34E7294278C40021340B /* RemoteConversionRatesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E6294278C40021340B /* RemoteConversionRatesLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		30EB34D72942739E0021340B /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		30EB34DA2942746C0021340B /* ConversionRateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRateDTO.swift; sourceTree = "<group>"; };
 		30EB34E02942755D0021340B /* ConversionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRate.swift; sourceTree = "<group>"; };
+		30EB34E2294276690021340B /* ConversionRatesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesMapper.swift; sourceTree = "<group>"; };
+		30EB34E42942784C0021340B /* ConversionRatesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesLoader.swift; sourceTree = "<group>"; };
+		30EB34E6294278C40021340B /* RemoteConversionRatesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConversionRatesLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			children = (
 				30EB34D5294273730021340B /* HTTPClient.swift */,
 				30EB34D72942739E0021340B /* URLSessionHTTPClient.swift */,
+				30EB34E2294276690021340B /* ConversionRatesMapper.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -139,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				30EB34DA2942746C0021340B /* ConversionRateDTO.swift */,
+				30EB34E42942784C0021340B /* ConversionRatesLoader.swift */,
+				30EB34E6294278C40021340B /* RemoteConversionRatesLoader.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -221,9 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30EB34E3294276690021340B /* ConversionRatesMapper.swift in Sources */,
 				30EB34C129426DAE0021340B /* ContentView.swift in Sources */,
+				30EB34E52942784C0021340B /* ConversionRatesLoader.swift in Sources */,
 				30EB34DB2942746C0021340B /* ConversionRateDTO.swift in Sources */,
 				30EB34BF29426DAE0021340B /* ConversionRatesApp.swift in Sources */,
+				30EB34E7294278C40021340B /* RemoteConversionRatesLoader.swift in Sources */,
 				30EB34E12942755D0021340B /* ConversionRate.swift in Sources */,
 				30EB34D6294273730021340B /* HTTPClient.swift in Sources */,
 				30EB34D82942739E0021340B /* URLSessionHTTPClient.swift in Sources */,
