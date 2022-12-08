@@ -41,7 +41,7 @@ struct ConversionRatesView: View {
                         Button {
                             viewModel.getRates()
                         }  label: {
-                            Label("Reload", systemImage: "arrow.clockwise")
+                            Label(viewModel.actionButtonTitle, systemImage: "arrow.clockwise")
                         }
                     }
                 }
