@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ConversionError: Error {
+enum ConversionError: Error {
     case invalidData
     case requestError
 }
@@ -17,14 +17,14 @@ final class RemoteConversionRatesLoader: ConversionRatesLoader {
     private let url: URL
     private let client: HTTPClient
 
-    public typealias Result = LoadConversionRatesResult
+    typealias Result = LoadConversionRatesResult
 
-    public init (url: URL, client: HTTPClient) {
+    init (url: URL, client: HTTPClient) {
         self.url = url
         self.client = client
     }
 
-    public func load(completion: @escaping (Result) -> Void) {
+    func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in
             guard let self = self else { return }
 
