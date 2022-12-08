@@ -18,6 +18,9 @@
 		30EB34E3294276690021340B /* ConversionRatesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E2294276690021340B /* ConversionRatesMapper.swift */; };
 		30EB34E52942784C0021340B /* ConversionRatesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E42942784C0021340B /* ConversionRatesLoader.swift */; };
 		30EB34E7294278C40021340B /* RemoteConversionRatesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E6294278C40021340B /* RemoteConversionRatesLoader.swift */; };
+		30EB34EA2942826F0021340B /* ConversionRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34E92942826F0021340B /* ConversionRatesViewModel.swift */; };
+		30EB34EC29428B590021340B /* ConversionRateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34EB29428B590021340B /* ConversionRateItemViewModel.swift */; };
+		30EB34EE29428B7E0021340B /* ConversionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB34ED29428B7E0021340B /* ConversionState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		30EB34E2294276690021340B /* ConversionRatesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesMapper.swift; sourceTree = "<group>"; };
 		30EB34E42942784C0021340B /* ConversionRatesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesLoader.swift; sourceTree = "<group>"; };
 		30EB34E6294278C40021340B /* RemoteConversionRatesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConversionRatesLoader.swift; sourceTree = "<group>"; };
+		30EB34E92942826F0021340B /* ConversionRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRatesViewModel.swift; sourceTree = "<group>"; };
+		30EB34EB29428B590021340B /* ConversionRateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRateItemViewModel.swift; sourceTree = "<group>"; };
+		30EB34ED29428B7E0021340B /* ConversionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,9 @@
 		30EB34E8294281720021340B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				30EB34E92942826F0021340B /* ConversionRatesViewModel.swift */,
+				30EB34EB29428B590021340B /* ConversionRateItemViewModel.swift */,
+				30EB34ED29428B7E0021340B /* ConversionState.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -240,8 +249,11 @@
 			files = (
 				30EB34E3294276690021340B /* ConversionRatesMapper.swift in Sources */,
 				30EB34C129426DAE0021340B /* ConversionRatesView.swift in Sources */,
+				30EB34EA2942826F0021340B /* ConversionRatesViewModel.swift in Sources */,
+				30EB34EE29428B7E0021340B /* ConversionState.swift in Sources */,
 				30EB34E52942784C0021340B /* ConversionRatesLoader.swift in Sources */,
 				30EB34DB2942746C0021340B /* ConversionRateDTO.swift in Sources */,
+				30EB34EC29428B590021340B /* ConversionRateItemViewModel.swift in Sources */,
 				30EB34BF29426DAE0021340B /* ConversionRatesApp.swift in Sources */,
 				30EB34E7294278C40021340B /* RemoteConversionRatesLoader.swift in Sources */,
 				30EB34E12942755D0021340B /* ConversionRate.swift in Sources */,
