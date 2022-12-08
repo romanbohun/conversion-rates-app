@@ -101,6 +101,7 @@
 		30EB34CE29426EE90021340B /* Conversion Rates */ = {
 			isa = PBXGroup;
 			children = (
+				30EB34E8294281720021340B /* ViewModels */,
 				30EB34DF294274F80021340B /* Models */,
 				30EB34DE294274DA0021340B /* Api */,
 				30EB34CF29426F110021340B /* Views */,
@@ -158,6 +159,13 @@
 				30EB34E02942755D0021340B /* ConversionRate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		30EB34E8294281720021340B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
