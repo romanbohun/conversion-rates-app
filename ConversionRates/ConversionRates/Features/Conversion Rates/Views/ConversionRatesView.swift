@@ -8,19 +8,58 @@
 import SwiftUI
 
 struct ConversionRatesView: View {
+    @ObservedObject var viewModel: ConversionRatesViewModel
+    @State private var searchText = ""
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        let isAlertPresented = Binding<Bool>(
+            get: { self.viewModel.state ==  .error },
+            set: { _ in  }
+        )
+
+        NavigationView {
+            HStack() {
+                switch viewModel.state {
+                case .idle:
+                    Text(viewModel.title)
+                        .font(.largeTitle)
+                case .loading:
+                    ProgressView()
+                case .loaded:
+                    List {
+                        ForEach(viewModel.conversionRates) { rate in
+                            Text(rate.name)
+                        }
+                    }
+                case .error:
+                    Text(viewModel.errorMessageScreen)
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    if viewModel.state != .loading {
+                        Button {
+                            viewModel.getRates()
+                        }  label: {
+                            Label("Reload", systemImage: "arrow.clockwise")
+                        }
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
+        .onAppear {
+            viewModel.getRates()
+        }
+        .searchable(text: $searchText, placement: .navigationBarDrawer)
+        .alert(viewModel.errorMessageAlert, isPresented: isAlertPresented) {
+            Button("OK", role: .cancel) { }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversionRatesView()
+        ConversionRatesView(viewModel: ConversionRatesViewModel())
     }
 }

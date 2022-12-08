@@ -12,7 +12,7 @@ protocol ConversionRateItemViewModelOutput {
     var rate: String { get }
 }
 
-class ConversionRateItemViewModel: ConversionRateItemViewModelOutput {
+class ConversionRateItemViewModel: ConversionRateItemViewModelOutput, Identifiable {
     private let conversionRate: ConversionRate
 
     var name: String { conversionRate.code }
